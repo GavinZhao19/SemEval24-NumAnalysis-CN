@@ -110,3 +110,31 @@ The evaluation metrics are as follows:
     "predict_steps_per_second": 0.054
 }
 ```
+## Test
+**Downloading Model Weights:** The model weights can be downloaded from the following URL: 
+https://huggingface.co/XavierZhao/NumAnalysis-Chatglm3-6B
+
+```python
+from transformers import AutoTokenizer, AutoModel
+tokenizer = AutoTokenizer.from_pretrained("XavierZhao/NumAnalysis-Chatglm3-6B", trust_remote_code=True)
+model = AutoModel.from_pretrained("XavierZhao/NumAnalysis-Chatglm3-6B", trust_remote_code=True, device='cuda')
+model = model.eval()
+input_sentence = input_sentence = """
+<|system|>
+你是總結大師，需要閱讀下面文章，從四個選項中選出正確的選項，選項內容都為數字，填在問題的___中，使整個句子符合文章表達的意思。
+<|user|>
+文章內容：
+麗清(3346)公布2016年4月合併營收2.21億元，月增8.1%、年減4.75%；累計1至4月合併營收8.98億元、年減1.88%。麗清表示，4月雖受清明連假致使工作天數較少，但營收表現仍較上月成長，在於主要客戶長城汽車4月在中國新車市場保持熱銷，而公司為長城汽車Tier 1(一階)供應商，因此，在長城汽車保持良好銷售表現下，亦帶動整體備貨力道持續增溫。展望第二季，麗清保持審慎樂觀看法；公司表示，第一季部分客戶訂單遞延，預期在第二季起將逐步恢復正常，可望為營運表現增添助力；此外，中國新車銷售市場在購置稅減半政策下，使得小車與售價較低的中國自主品牌車廠展現良好銷售表現，成為帶動整體中國新車市場的主要成長動力。麗清表示，公司為中國最大SUV品牌車廠長城汽車之Tier 1供應商，並供應長城汽車全車系LED車燈產品，可望隨著長城汽車持續推出更多購車優惠、刺激銷量表現下，創造未來整體營運逐季成長的動力；此外，旗下主要客戶尚包括上海小糸、廣州小糸等中國主要Tier 1車燈供應商，合計市占率達三成，隨著各品牌車廠針對汽車電子朝向安全、智慧化以及節能減碳的配備趨勢不變，將有助公司掌握良好的訂單能見度，並站穩中國最大LED車燈廠地位。
+問題：麗清4月營收月增8%；Q___接單回穩料為營運添助力
+選項：(A) 1; (B) 1.88; (C) 2.21; (D) 4; 
+<|assistant|>
+
+"""
+response, history = model.chat(tokenizer, input_sentence, history=[])
+print(response)
+>>>
+文章與數字相關的內容可以總結成四個部分：
+(A) 累計1至4月合併營收8.98億元而公司為長城汽車Tier 1(一階)供應商公司為中國最大SUV品牌車廠長城汽車之Tier 1供應商廣州小糸等中國主要Tier 1車燈供應商; (B) 年減1.88%; (C) 麗清(3346)公布2016年4月合併營收2.21億元; (D) 麗清(3346)公布2016年4月合併營收2.21億元累計1至4月合併營收8.98億元4月雖受清明連假致使工作天數較少在於主要客戶長城汽車4月在中國新車市場保持熱銷;
+針對問題：麗清4月營收月增8%；Q___接單回穩料為營運添助力 四個選項：(A) 1; (B) 1.88; (C) 2.21; (D) 4;
+正確的選項是: (B) 1.88
+```
