@@ -8,7 +8,8 @@ This repository hosts the development for Task 2 of SemEval-2024's NumEval chall
 The training approach follows a Chain of Thought (CoT) methodology, adapting it for numeral-focused language understanding. The original data format consists of a text passage and question options. We transform this into a structured format where the input includes an instruction, the text passage, and the question options. The output consists of a summary of the numerical content in the text, a repetition of the question, the options, and the selected answer.
 
 Key dependencies and highlights include:
-- Attention score influence as visualized [here](https://huggingface.co/IDEA-CCNL/Ziya-Reader-13B-v1.0/tree/main).
+- Attention score influence as visualized
+![attention_score.png](image/heatmap_attention_score.png)
 - Base model: `ChatGLM3`.
 - Comparative models for future evaluation include `GPT-3.5-Turbo`, `Gemini-Pro`, and `Ziya-13B-v1.1`.
 
@@ -81,7 +82,6 @@ An example of the preprocessed dataset is as follows:
 }
 ```
 
-
 ## Training
 The current training regimen is set for 10 epochs. However, due to an observed increase in eval loss starting from epoch 6, the training was halted early. 
 ```text
@@ -91,6 +91,11 @@ gpus: 16
 learning rate: 1e-6
 warmup ratio: 0.01
 ```
+![Eval Loss](image/eval_loss)
+
+![Train Loss](image/train_loss)
+
+![Train Epoch](image/train_epoch)
 
 ## Evaluation
 The evaluation metrics are as follows:
