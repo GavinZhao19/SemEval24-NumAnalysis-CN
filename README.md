@@ -116,7 +116,8 @@ Additionally, results from the `Ziya-13B-v1.1` model are available in the `test/
 
 ## Test
 **Downloading Model Weights:** The model weights can be downloaded from the following URL: 
-https://huggingface.co/GavinZhao23/NumAnalysis-Chatglm3-6B
+https://huggingface.co/GavinZhao23/NumAnalysis-Chatglm3-6B (Now set private)
+<img width="1298" alt="image" src="https://github.com/GavinZhao19/SemEval24-NumAnalysis-CN/assets/133320285/6cf9e5b9-f809-4a58-b7dd-f39ea389654d">
 
 ```python
 from transformers import AutoTokenizer, AutoModel
