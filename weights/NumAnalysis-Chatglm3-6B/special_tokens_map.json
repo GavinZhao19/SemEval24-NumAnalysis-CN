@@ -1,0 +1,7 @@
+{
+  "additional_special_tokens": [
+    "<|user|>",
+    "<|observation|>"
+  ],
+  "mask_token": "[MASK]"
+}
