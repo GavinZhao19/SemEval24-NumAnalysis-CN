@@ -120,8 +120,8 @@ https://huggingface.co/GavinZhao23/NumAnalysis-Chatglm3-6B
 
 ```python
 from transformers import AutoTokenizer, AutoModel
-tokenizer = AutoTokenizer.from_pretrained("XavierZhao/NumAnalysis-Chatglm3-6B", trust_remote_code=True)
-model = AutoModel.from_pretrained("XavierZhao/NumAnalysis-Chatglm3-6B", trust_remote_code=True, device='cuda')
+tokenizer = AutoTokenizer.from_pretrained("GavinZhao23/NumAnalysis-Chatglm3-6B", trust_remote_code=True)
+model = AutoModel.from_pretrained("GavinZhao23/NumAnalysis-Chatglm3-6B", trust_remote_code=True, device='cuda')
 model = model.eval()
 input_sentence = input_sentence = """
 <|system|>
