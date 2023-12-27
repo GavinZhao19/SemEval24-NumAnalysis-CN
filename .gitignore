@@ -3,3 +3,4 @@ data/org/test.json
 data/preprocessed/train.json
 data/preprocessed/valid.json
 .DS_Store
+data/new-task/*
