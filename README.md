@@ -1,8 +1,11 @@
-# SemEval24-NumAnalysis-CN
+# SemEval24-NumAnalysis-CN • [![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://x.com/nicolayr_/status/1803707694169100397)
+![](https://img.shields.io/badge/Python-3.10-lightgreen.svg)
+[![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://x.com/nicolayr_/status/1803705227108847866)
+
 **SemEval-2024 Task 7 - NumEval: Task 2 - Reading Comprehension of the Numerals in Text (Chinese)**
 
 ## Introduction
-This repository hosts the development for Task 2 of SemEval-2024's NumEval challenge, focusing on the reading comprehension of numerals in Chinese text (https://sites.google.com/view/numeval/tasks). Our approach is inspired by the training strategy outlined in paper (https://arxiv.org/pdf/2311.09198.pdf) and involves constructing a dataset and training a model capable of accurately identifying numerical answers in context.
+This repository hosts the development for Task 2 of SemEval-2024's NumEval challenge, focusing on the [reading comprehension of numerals in Chinese text](https://sites.google.com/view/numeval/tasks). Our approach is inspired by the [training strategy outlined in "**Never Lost in The Middle**"-paper](https://arxiv.org/pdf/2311.09198.pdf) and involves constructing a dataset and training a model capable of accurately identifying numerical answers in context.
 
 ## Methodology
 The training approach follows a Chain of Thought (CoT) methodology, adapting it for numeral-focused language understanding. The original data format consists of a text passage and question options. We transform this into a structured format where the input includes an instruction, the text passage, and the question options. The output consists of a summary of the numerical content in the text, a repetition of the question, the options, and the selected answer.
@@ -172,4 +175,19 @@ input:
 
 output:
 文章與數字相關的內容可以總結成四個部分：(A) 西柏今年8月營收達2.12億元; (B) EPS達2.50元; (C) 整體第3季營收可優於前季整體第3季營收可優於前季今年西柏營收估增逾3成; (D) 第4季因第2大客戶拉貨告一段落亞洲4%第4季第1大客戶拉貨持穩; 針對問題：西柏Q3有匯損影響；Q___營收估較前季修正 四個選項：(A) 2.12; (B) 2.50; (C) 3; (D) 4;  \n正確的選項是: (D) 4
+```
+
+# References 
+
+You can cite this work as follows:
+```bibtex
+@article{Junzhe2024nclnlp,
+  title={A CoT-Based SFT Training Strategy with Large Language Models for Number-Focused Headline Generation},
+  booktitle = "Proceedings of the Annual Conference of the North American Chapter of the Association for Computational Linguistics",
+  author={Junzhe, Zhao and Yingxi, Wang and Huizhi, Liang and Nicolay, Rusnachenko},
+  year= "2024",
+  month= jun,
+  address = "Mexico City, Mexico",
+  publisher = "Association for Computational Linguistics"
+}
 ```
