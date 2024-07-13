@@ -1,7 +1,7 @@
-# SemEval24-NumAnalysis-CN • [![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://x.com/nicolayr_/status/1803707694169100397)
+# SemEval24-NumAnalysis-CN • [![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://x.com/nicolayr_/status/1804027443738505549)
 ![](https://img.shields.io/badge/Python-3.10-lightgreen.svg)
-[![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://x.com/nicolayr_/status/1803705227108847866)
-[![arXiv](https://img.shields.io/badge/acl-2024.semeval_1.40-b31b1b.svg)](https://aclanthology.org/2024.semeval-1.40/)
+[![twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://x.com/nicolayr_/status/1804027443738505549)
+[![acl](https://img.shields.io/badge/acl-2024.semeval_1.40-b31b1b.svg)](https://aclanthology.org/2024.semeval-1.40/)
 
 **SemEval-2024 Task 7 - NumEval: Task 2 - Reading Comprehension of the Numerals in Text (Chinese)**
 
